@@ -12,8 +12,6 @@ const Nav = () => {
     })
   }, [])
 
-  console.log(categories)
-
   return (
     <section>
       <ul>
