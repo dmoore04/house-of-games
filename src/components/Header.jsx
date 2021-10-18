@@ -1,8 +1,10 @@
+import styles from "../styles/Header.module.css"
+
 const Header = () => {
   return (
-    <section>
+    <header>
       <h1>House of Games 🎲</h1>
-    </section>
+    </header>
   )
 }
 
