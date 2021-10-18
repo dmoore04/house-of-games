@@ -9,4 +9,9 @@
   font-family: "Source Code Pro", monospace;
   font-weight: 600;
   color: #e2ff00;
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
 }
