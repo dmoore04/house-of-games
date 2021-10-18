@@ -14,6 +14,7 @@ const Reviews = () => {
 
   return (
     <section className={styles.reviews}>
+      <h2 className={styles.heading}>All Reviews</h2>
       <ul className={styles.list}>
         {reviews.map((review) => (
           <ReviewCard key={review.review_id} review={review} />
