@@ -2,8 +2,8 @@ import styles from "../styles/Header.module.css"
 
 const Header = () => {
   return (
-    <header>
-      <h1>House of Games 🎲</h1>
+    <header className={styles.header}>
+      <h1 className={styles.title}>House of Games 🎲</h1>
     </header>
   )
 }
