@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { getCategories } from "../utils/api"
 import { slugToName } from "../utils/string"
+import styles from "../styles/Nav.module.css"
 
 const Nav = () => {
   const [categories, setCategories] = useState([])
@@ -13,10 +14,14 @@ const Nav = () => {
   }, [])
 
   return (
-    <nav>
-      <ul>
+    <nav className={styles.nav}>
+      <ul className={styles.categories}>
         {categories.map((category) => (
-          <Link key={category.slug} to={`/categories/${category.slug}`}>
+          <Link
+            className={styles.link}
+            key={category.slug}
+            to={`/categories/${category.slug}`}
+          >
             {slugToName(category.slug)}
           </Link>
         ))}

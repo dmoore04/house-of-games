@@ -1,0 +1,19 @@
+.nav {
+  background-color: #cbdfbd;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: scroll;
+  padding: 0.75em;
+}
+
+.categories {
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  margin: 0 1em;
+  color: #14213d;
+}
