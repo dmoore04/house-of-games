@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getReviews } from "../utils/api"
+import ReviewCard from "./ReviewCard"
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([])
@@ -10,7 +11,15 @@ const Reviews = () => {
     })
   }, [])
 
-  return <section>Reviews</section>
+  return (
+    <section>
+      <ul>
+        {reviews.map((review) => (
+          <ReviewCard key={review.review_id} review={review} />
+        ))}
+      </ul>
+    </section>
+  )
 }
 
 export default Reviews
