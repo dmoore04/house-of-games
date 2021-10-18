@@ -13,7 +13,7 @@ const Nav = () => {
   }, [])
 
   return (
-    <section>
+    <nav>
       <ul>
         {categories.map((category) => (
           <Link key={category.slug} to={`/categories/${category.slug}`}>
@@ -21,7 +21,7 @@ const Nav = () => {
           </Link>
         ))}
       </ul>
-    </section>
+    </nav>
   )
 }
 export default Nav
