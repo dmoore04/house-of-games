@@ -20,6 +20,7 @@
 .title {
   margin: 0.25em 0;
   font-size: 1.25em;
+  color: #14213d;
 }
 
 .date {
@@ -38,7 +39,6 @@
 }
 
 .comments {
-  color: black;
   color: #8d8d8d;
 }
 
@@ -46,4 +46,8 @@
   color: #14213d;
   margin: 0;
   font-size: 1em;
+}
+
+.link {
+  text-decoration: none;
 }

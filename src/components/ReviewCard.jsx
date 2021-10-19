@@ -1,12 +1,15 @@
 import styles from "../styles/ReviewCard.module.css"
 import { slugToName } from "../utils/string"
+import { Link } from "react-router-dom"
 
 const ReviewCard = ({ review }) => {
   return (
-    <div className={styles.card}>
-      <Heading review={review} />
-      <Metadata review={review} />
-    </div>
+    <Link className={styles.link} to={`/reviews/${review.review_id}`}>
+      <div className={styles.card}>
+        <Heading review={review} />
+        <Metadata review={review} />
+      </div>
+    </Link>
   )
 }
 
