@@ -1,0 +1,65 @@
+.review {
+  font-family: "Source Code Pro", monospace;
+  padding: 0 0.6em;
+}
+
+.img {
+  width: 100%;
+}
+
+.title {
+  font-size: 1.25em;
+  font-weight: 900;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+.metadata {
+  color: #8d8d8d;
+  font-size: 0.75em;
+  margin-bottom: 1em;
+}
+
+.metadata p {
+  margin: 0;
+}
+
+.category {
+  font-weight: 600;
+}
+
+.author {
+  color: #81b29a;
+}
+
+.kicker {
+  font-size: 0.6em;
+  margin-bottom: 0;
+  color: #8d8d8d;
+  padding: 0.75em 0;
+}
+
+.body {
+  font-size: 0.9em;
+  text-align: justify;
+}
+
+.votes {
+  text-align: right;
+  font-size: 0.75em;
+}
+
+.voter {
+  background: none;
+  border: none;
+}
+
+.voting {
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+}
+
+.voting p {
+  margin: 0;
+}
