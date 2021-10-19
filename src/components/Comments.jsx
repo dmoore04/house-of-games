@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import { getReviewComments } from "../utils/api"
+import CommentCard from "./CommentCard"
+import styles from "../styles/Comments.module.css"
 
 const Comments = ({ review_id }) => {
   const [comments, setComments] = useState([])
@@ -13,9 +15,9 @@ const Comments = ({ review_id }) => {
   return (
     <section>
       <h3>Comments</h3>
-      <ul>
+      <ul class={styles.comment__list}>
         {comments.map((comment) => (
-          <li key={comment.comment_id}>{comment.body}</li>
+          <CommentCard key={comment.comment_id} comment={comment} />
         ))}
       </ul>
     </section>

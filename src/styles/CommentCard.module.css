@@ -1,0 +1,28 @@
+.card {
+  background-color: #ffffff;
+  padding: 1em;
+  border-radius: 5%;
+  margin-bottom: 1em;
+  font-size: 0.75em;
+}
+
+.body {
+  margin: 0;
+}
+
+.metadata {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #8d8d8d;
+  font-size: 0.75em;
+}
+
+.author {
+  color: #81b29a;
+}
+
+.votes {
+  color: #00a312;
+}
