@@ -1,15 +1,12 @@
-import { useState } from "react"
-import ReviewCard from "./ReviewCard"
-import useReviews from "../hooks/useReviews"
-import Sort from "./Sort"
 import styles from "../styles/Reviews.module.css"
+import ReviewCard from "./ReviewCard"
+import Sort from "./Sort"
+import useReviews from "../hooks/useReviews"
+import useSort from "../hooks/useSort"
 
 const Reviews = () => {
-  const [sortBy, setSortBy] = useState("created_at")
-  const [order, setOrder] = useState("desc")
+  const { sortBy, setSortBy, order, setOrder } = useSort()
   const reviews = useReviews(sortBy, order)
-
-  console.log(sortBy)
 
   return (
     <section className={styles.reviews}>
