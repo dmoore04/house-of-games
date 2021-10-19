@@ -7,7 +7,7 @@
   border: none;
 }
 
-.filters {
+.sorting {
   display: flex;
   justify-content: space-evenly;
 }

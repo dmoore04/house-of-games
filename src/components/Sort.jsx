@@ -1,8 +1,8 @@
-import styles from "../styles/Filters.module.css"
+import styles from "../styles/Sort.module.css"
 
-const Filters = ({ setSortBy, setOrder }) => {
+const Sort = ({ setSortBy, setOrder }) => {
   return (
-    <div className={styles.filters}>
+    <div className={styles.sorting}>
       <label className={styles.label} htmlFor="sort_by">
         sort by
         <select
@@ -31,4 +31,4 @@ const Filters = ({ setSortBy, setOrder }) => {
   )
 }
 
-export default Filters
+export default Sort
