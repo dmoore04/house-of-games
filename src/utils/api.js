@@ -22,6 +22,10 @@ export const getReviews = async (sortBy, order, category_slug) => {
 
 export const getReview = async (review_id) => {
   const { data } = await gamesApi.get(`/reviews/${review_id}`)
-
   return data.review
+}
+
+export const getReviewComments = async (review_id) => {
+  const { data } = await gamesApi.get(`/reviews/${review_id}/comments`)
+  return data.comments
 }

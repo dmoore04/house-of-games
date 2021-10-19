@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router"
 import { getReview } from "../utils/api"
 import { slugToName } from "../utils/string"
+import Comments from "./Comments"
 import styles from "../styles/Review.module.css"
 
 const Review = () => {
@@ -19,8 +20,8 @@ const Review = () => {
   return (
     <section className={styles.review}>
       <p className={styles.kicker}>
-        Categories /{" "}
-        <span className={styles.category}>{slugToName(review.category)}</span>
+        Categories /
+        <span className={styles.category}> {slugToName(review.category)}</span>
       </p>
       <h2 className={styles.title}>{review.title}</h2>
       <p className={styles.metadata}>
@@ -41,9 +42,7 @@ const Review = () => {
           <button className={styles.voter}>👎</button>
         </div>
       </div>
-      <section>
-        <h3>Comments</h3>
-      </section>
+      <Comments review_id={review_id} />
     </section>
   )
 }
