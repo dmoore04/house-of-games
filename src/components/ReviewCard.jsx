@@ -1,11 +1,14 @@
 import styles from "../styles/ReviewCard.module.css"
+import { slugToName } from "../utils/string"
 
 const ReviewCard = ({ review }) => {
   const published = new Date(review.created_at)
   return (
     <div className={styles.card}>
       <h2 className={styles.title}>{review.title}</h2>
-      <p className={styles.category}>{review.category}</p>
+      <p className={styles.category}>
+        {slugToName(review.category).toLowerCase()}
+      </p>
       <p className={styles.author}>
         by <strong>{review.owner}</strong>
       </p>
