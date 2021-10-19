@@ -5,7 +5,10 @@ const Filters = ({ setSortBy }) => {
     <div>
       <label className={styles.label} htmlFor="">
         sort by
-        <select onChange={(e) => setSortBy(e.target.value)}>
+        <select
+          className={styles.select}
+          onChange={(e) => setSortBy(e.target.value)}
+        >
           <option value="created_at">⏰</option>
           <option value="votes">👍</option>
         </select>
