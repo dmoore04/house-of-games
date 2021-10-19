@@ -3,10 +3,12 @@ import ReviewCard from "./ReviewCard"
 import Sort from "./Sort"
 import useReviews from "../hooks/useReviews"
 import useSort from "../hooks/useSort"
+import { useParams } from "react-router"
 
 const Reviews = () => {
+  const { category_slug } = useParams()
   const { sortBy, setSortBy, order, setOrder } = useSort()
-  const reviews = useReviews(sortBy, order)
+  const reviews = useReviews(sortBy, order, category_slug)
 
   return (
     <section className={styles.reviews}>

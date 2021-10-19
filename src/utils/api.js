@@ -9,11 +9,12 @@ export const getCategories = async () => {
   return data.categories
 }
 
-export const getReviews = async (sortBy, order) => {
+export const getReviews = async (sortBy, order, category_slug) => {
   const { data } = await gamesApi.get("/reviews", {
     params: {
       sort_by: sortBy,
       order: order,
+      category: category_slug,
     },
   })
   return data.reviews
