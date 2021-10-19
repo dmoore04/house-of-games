@@ -5,12 +5,14 @@ const ReviewCard = ({ review }) => {
   return (
     <div className={styles.card}>
       <h2 className={styles.title}>{review.title}</h2>
+      <p className={styles.category}>{review.category}</p>
       <p className={styles.author}>
         by <strong>{review.owner}</strong>
       </p>
       <div className={styles.metadata}>
         <span className={styles.date}>{published.toDateString()} ⏰</span>
         <span className={styles.votes}>{review.votes} 👍</span>
+        <span className={styles.comments}>{review.comment_count} 💬</span>
       </div>
     </div>
   )

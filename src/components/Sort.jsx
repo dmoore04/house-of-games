@@ -13,6 +13,7 @@ const Sort = ({ setSortBy, setOrder }) => {
         >
           <option value="created_at">⏰</option>
           <option value="votes">👍</option>
+          <option value="comment_count">💬</option>
         </select>
       </label>
       <label className={styles.label} htmlFor="order">
