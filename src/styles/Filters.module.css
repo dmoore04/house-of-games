@@ -6,3 +6,8 @@
   background: none;
   border: none;
 }
+
+.filters {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import { getReviews } from "../utils/api"
 
-const useReviews = (sortBy) => {
+const useReviews = (sortBy, order) => {
   const [reviews, setReviews] = useState([])
 
   useEffect(() => {
-    getReviews(sortBy).then((reviewsFromAPI) => {
+    getReviews(sortBy, order).then((reviewsFromAPI) => {
       setReviews(reviewsFromAPI)
     })
-  }, [sortBy])
+  }, [sortBy, order])
 
   return reviews
 }

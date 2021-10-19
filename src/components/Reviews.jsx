@@ -6,14 +6,15 @@ import styles from "../styles/Reviews.module.css"
 
 const Reviews = () => {
   const [sortBy, setSortBy] = useState("created_at")
-  const reviews = useReviews(sortBy)
+  const [order, setOrder] = useState("desc")
+  const reviews = useReviews(sortBy, order)
 
   console.log(sortBy)
 
   return (
     <section className={styles.reviews}>
       <h2 className={styles.heading}>All Reviews</h2>
-      <Filters setSortBy={setSortBy} />
+      <Filters setSortBy={setSortBy} setOrder={setOrder} />
       <ul className={styles.list}>
         {reviews.map((review) => (
           <ReviewCard key={review.review_id} review={review} />
