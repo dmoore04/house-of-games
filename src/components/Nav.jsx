@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { getCategories } from "../utils/api"
 import { slugToName } from "../utils/string"
 import styles from "../styles/Nav.module.css"
@@ -17,13 +17,14 @@ const Nav = () => {
     <nav className={styles.nav}>
       <ul className={styles.categories}>
         {categories.map((category) => (
-          <Link
+          <NavLink
             className={styles.link}
+            activeClassName={styles.selected}
             key={category.slug}
             to={`/categories/${category.slug}`}
           >
             {slugToName(category.slug)}
-          </Link>
+          </NavLink>
         ))}
       </ul>
     </nav>

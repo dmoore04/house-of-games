@@ -17,3 +17,8 @@
   margin: 0 1em;
   color: #14213d;
 }
+
+.selected {
+  color: #ff5964;
+  font-weight: bold;
+}
