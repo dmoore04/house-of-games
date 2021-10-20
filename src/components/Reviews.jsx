@@ -22,19 +22,22 @@ const Reviews = () => {
         {category_slug ? slugToName(category_slug) : "All"} Reviews
       </h2>
       <Sort setSortBy={setSortBy} setOrder={setOrder} />
-      <HashLoader
-        loading={isLoading}
-        color={"#81b29a"}
-        css={css`
-          position: relative;
-          top: 15vh;
-        `}
-      />
-      <ul className={styles.list}>
-        {reviews.map((review) => (
-          <ReviewCard key={review.review_id} review={review} />
-        ))}
-      </ul>
+      {isLoading ? (
+        <HashLoader
+          loading={isLoading}
+          color={"#81b29a"}
+          css={css`
+            position: relative;
+            top: 15vh;
+          `}
+        />
+      ) : (
+        <ul className={styles.list}>
+          {reviews.map((review) => (
+            <ReviewCard key={review.review_id} review={review} />
+          ))}
+        </ul>
+      )}
     </section>
   )
 }
