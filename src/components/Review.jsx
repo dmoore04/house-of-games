@@ -3,13 +3,24 @@ import Comments from "./Comments"
 import ReviewVotes from "./ReviewVotes"
 import styles from "../styles/Review.module.css"
 import useReview from "../hooks/useReview"
+import { HashLoader } from "react-spinners"
 import Error from "./Error"
+import { css } from "@emotion/react"
 
 const Review = () => {
-  const { review_id, review, error } = useReview()
+  const { review_id, review, error, isLoading } = useReview()
 
   return error ? (
     <Error error={error} />
+  ) : isLoading ? (
+    <HashLoader
+      loading={isLoading}
+      color={"#81b29a"}
+      css={css`
+        position: relative;
+        top: 15vh;
+      `}
+    />
   ) : (
     <section className={styles.review}>
       <Heading review={review} />
