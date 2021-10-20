@@ -1,10 +1,8 @@
 import styles from "../styles/ReviewVotes.module.css"
 import Voter from "./Voter"
 import { useState } from "react"
-import useReview from "../hooks/useReview"
 
-const ReviewVotes = () => {
-  const { review, setReview } = useReview()
+const ReviewVotes = ({ review, setReview }) => {
   const [voted, setVoted] = useState(false)
 
   return (

@@ -8,7 +8,7 @@ import Error from "./Error"
 import { css } from "@emotion/react"
 
 const Review = () => {
-  const { review_id, review, error, isLoading } = useReview()
+  const { review_id, review, error, isLoading, setReview } = useReview()
 
   return error ? (
     <Error error={error} />
@@ -30,9 +30,9 @@ const Review = () => {
             Designed by <strong>{review.designer}</strong>
           </p>
           <p className={styles.body}>{review.review_body}</p>
+          <ReviewVotes review={review} setReview={setReview} />
         </>
       )}
-      <ReviewVotes />
       <Comments review_id={review_id} reviewIsLoading={isLoading} />
     </section>
   )
