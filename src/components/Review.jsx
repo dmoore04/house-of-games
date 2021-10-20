@@ -3,8 +3,8 @@ import { useParams } from "react-router"
 import { getReview } from "../utils/api"
 import { slugToName } from "../utils/string"
 import Comments from "./Comments"
+import ReviewVotes from "./ReviewVotes"
 import styles from "../styles/Review.module.css"
-import Voter from "./Voter"
 
 const Review = () => {
   const { review_id } = useParams()
@@ -24,7 +24,7 @@ const Review = () => {
         Designed by <strong>{review.designer}</strong>
       </p>
       <p className={styles.body}>{review.review_body}</p>
-      <Votes review={review} setReview={setReview} />
+      <ReviewVotes review={review} setReview={setReview} />
       <Comments review_id={review_id} />
     </section>
   )
@@ -47,30 +47,6 @@ const Heading = ({ review }) => {
         <strong> {published.toDateString()}</strong>
       </p>
     </>
-  )
-}
-
-const Votes = ({ review, setReview }) => {
-  const [voted, setVoted] = useState(false)
-
-  return (
-    <div className={styles.voting}>
-      <p className={styles.votes}>
-        <strong>Votes: </strong>
-        {review.votes}
-      </p>
-      <div className={styles.voters}>
-        {[1, -1].map((value) => (
-          <Voter
-            value={value}
-            review={review}
-            setReview={setReview}
-            voted={voted}
-            setVoted={setVoted}
-          />
-        ))}
-      </div>
-    </div>
   )
 }
 

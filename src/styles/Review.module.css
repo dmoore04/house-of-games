@@ -43,20 +43,3 @@
   font-size: 0.9em;
   text-align: justify;
 }
-
-.votes {
-  text-align: right;
-  font-size: 0.75em;
-  padding-bottom: 0.5em;
-}
-
-.voting {
-  display: flex;
-  align-content: flex-end;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.voting p {
-  margin: 0;
-}
