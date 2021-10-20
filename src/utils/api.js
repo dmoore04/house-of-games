@@ -36,3 +36,12 @@ export const addReviewVote = async (review_id, value) => {
   })
   return data.review
 }
+
+export const postComment = async (review_id, body, author) => {
+  const { data } = await gamesApi.post(`/reviews/${review_id}/comments`, {
+    body,
+    username: author,
+  })
+
+  return data.comment
+}
