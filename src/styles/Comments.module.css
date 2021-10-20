@@ -1,3 +1,9 @@
 .comment__list {
   padding: 0;
 }
+
+.error {
+  color: #ff5965;
+  font-size: 0.75em;
+  font-weight: 600;
+}
