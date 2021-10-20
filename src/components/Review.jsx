@@ -3,11 +3,14 @@ import Comments from "./Comments"
 import ReviewVotes from "./ReviewVotes"
 import styles from "../styles/Review.module.css"
 import useReview from "../hooks/useReview"
+import Error from "./Error"
 
 const Review = () => {
-  const { review_id, review } = useReview()
+  const { review_id, review, error } = useReview()
 
-  return (
+  return error ? (
+    <Error error={error} />
+  ) : (
     <section className={styles.review}>
       <Heading review={review} />
       <img className={styles.img} src={review.review_img_url} alt="" />

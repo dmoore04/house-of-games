@@ -5,14 +5,20 @@ import { getReview } from "../utils/api"
 const useReview = () => {
   const { review_id } = useParams()
   const [review, setReview] = useState({})
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    getReview(review_id).then((reviewFromAPI) => {
-      setReview(reviewFromAPI)
-    })
+    setError(null)
+    getReview(review_id)
+      .then((reviewFromAPI) => {
+        setReview(reviewFromAPI)
+      })
+      .catch((err) => {
+        setError(err)
+      })
   }, [review_id])
 
-  return { review_id, review, setReview }
+  return { review_id, review, setReview, error }
 }
 
 export default useReview
