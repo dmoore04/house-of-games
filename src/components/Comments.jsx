@@ -39,8 +39,10 @@ const Comments = ({ review_id }) => {
         </p>
       ) : (
         <>
-          <form action="" onSubmit={addComment}>
+          <form action="" onSubmit={addComment} className={styles.post__form}>
             <input
+              className={styles.post__input}
+              autoComplete="off"
               type="text"
               id="comment_body"
               name="comment_body"
@@ -50,7 +52,7 @@ const Comments = ({ review_id }) => {
               onChange={(e) => setNewComment(e.target.value)}
               required
             />
-            <button>Post</button>
+            <button className={styles.post__button}>Post</button>
           </form>
           <ul className={styles.comment__list}>
             {comments.map((comment) => (
