@@ -12,25 +12,28 @@ const Review = () => {
 
   return error ? (
     <Error error={error} />
-  ) : isLoading ? (
-    <HashLoader
-      loading={isLoading}
-      color={"#81b29a"}
-      css={css`
-        position: relative;
-        top: 15vh;
-      `}
-    />
   ) : (
     <section className={styles.review}>
-      <Heading review={review} />
-      <img className={styles.img} src={review.review_img_url} alt="" />
-      <p className={styles.metadata}>
-        Designed by <strong>{review.designer}</strong>
-      </p>
-      <p className={styles.body}>{review.review_body}</p>
+      <HashLoader
+        loading={isLoading}
+        color={"#81b29a"}
+        css={css`
+          position: relative;
+          top: 15vh;
+        `}
+      />
+      {!isLoading && (
+        <>
+          <Heading review={review} />
+          <img className={styles.img} src={review.review_img_url} alt="" />
+          <p className={styles.metadata}>
+            Designed by <strong>{review.designer}</strong>
+          </p>
+          <p className={styles.body}>{review.review_body}</p>
+        </>
+      )}
       <ReviewVotes />
-      <Comments review_id={review_id} />
+      <Comments review_id={review_id} reviewIsLoading={isLoading} />
     </section>
   )
 }
