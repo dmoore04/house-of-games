@@ -4,7 +4,6 @@ import CommentCard from "./CommentCard"
 import styles from "../styles/Comments.module.css"
 import { UserContext } from "../context/User"
 import { BeatLoader } from "react-spinners"
-import { css } from "@emotion/react"
 
 const Comments = ({ review_id }) => {
   const [comments, setComments] = useState([])
