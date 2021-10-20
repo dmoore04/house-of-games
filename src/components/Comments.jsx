@@ -3,16 +3,22 @@ import { getReviewComments, postComment } from "../utils/api"
 import CommentCard from "./CommentCard"
 import styles from "../styles/Comments.module.css"
 import { UserContext } from "../context/User"
+import { BeatLoader } from "react-spinners"
+import { css } from "@emotion/react"
 
 const Comments = ({ review_id }) => {
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState("")
   const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
   const { user } = useContext(UserContext)
 
   useEffect(() => {
+    setIsLoading(true)
+    setError(null)
     getReviewComments(review_id)
       .then((commentsFromAPI) => {
+        setIsLoading(false)
         setComments(commentsFromAPI)
       })
       .catch((err) => {
@@ -54,11 +60,15 @@ const Comments = ({ review_id }) => {
             />
             <button className={styles.post__button}>Post</button>
           </form>
-          <ul className={styles.comment__list}>
-            {comments.map((comment) => (
-              <CommentCard key={comment.comment_id} comment={comment} />
-            ))}
-          </ul>
+          {isLoading ? (
+            <BeatLoader loading={isLoading} color={"#81b29a"} />
+          ) : (
+            <ul className={styles.comment__list}>
+              {comments.map((comment) => (
+                <CommentCard key={comment.comment_id} comment={comment} />
+              ))}
+            </ul>
+          )}
         </>
       )}
     </section>
