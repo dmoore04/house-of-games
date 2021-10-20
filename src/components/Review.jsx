@@ -1,20 +1,11 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router"
-import { getReview } from "../utils/api"
 import { slugToName } from "../utils/string"
 import Comments from "./Comments"
 import ReviewVotes from "./ReviewVotes"
 import styles from "../styles/Review.module.css"
+import useReview from "../hooks/useReview"
 
 const Review = () => {
-  const { review_id } = useParams()
-  const [review, setReview] = useState({})
-
-  useEffect(() => {
-    getReview(review_id).then((reviewFromAPI) => {
-      setReview(reviewFromAPI)
-    })
-  }, [review_id])
+  const { review_id, review } = useReview()
 
   return (
     <section className={styles.review}>
@@ -24,7 +15,7 @@ const Review = () => {
         Designed by <strong>{review.designer}</strong>
       </p>
       <p className={styles.body}>{review.review_body}</p>
-      <ReviewVotes review={review} setReview={setReview} />
+      <ReviewVotes />
       <Comments review_id={review_id} />
     </section>
   )
