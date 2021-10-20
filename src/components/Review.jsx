@@ -4,6 +4,7 @@ import { getReview } from "../utils/api"
 import { slugToName } from "../utils/string"
 import Comments from "./Comments"
 import styles from "../styles/Review.module.css"
+import Voter from "./Voter"
 
 const Review = () => {
   const { review_id } = useParams()
@@ -15,10 +16,25 @@ const Review = () => {
     })
   }, [review_id])
 
+  return (
+    <section className={styles.review}>
+      <Heading review={review} />
+      <img className={styles.img} src={review.review_img_url} alt="" />
+      <p className={styles.metadata}>
+        Designed by <strong>{review.designer}</strong>
+      </p>
+      <p className={styles.body}>{review.review_body}</p>
+      <Votes review={review} setReview={setReview} />
+      <Comments review_id={review_id} />
+    </section>
+  )
+}
+
+const Heading = ({ review }) => {
   const published = new Date(review.created_at)
 
   return (
-    <section className={styles.review}>
+    <>
       <p className={styles.kicker}>
         Categories /
         <span className={styles.category}> {slugToName(review.category)}</span>
@@ -30,20 +46,19 @@ const Review = () => {
         on
         <strong> {published.toDateString()}</strong>
       </p>
-      <img className={styles.img} src={review.review_img_url} alt="" />
-      <p className={styles.metadata}>
-        Designed by <strong>{review.designer}</strong>
+    </>
+  )
+}
+
+const Votes = ({ review, setReview }) => {
+  return (
+    <div className={styles.voting}>
+      <p className={styles.votes}>
+        <strong>Votes: </strong>
+        {review.votes}
       </p>
-      <p className={styles.body}>{review.review_body}</p>
-      <div className={styles.voting}>
-        <p className={styles.votes}>Votes: {review.votes}</p>
-        <div className={styles.voters}>
-          <button className={styles.voter}>👍</button>
-          <button className={styles.voter}>👎</button>
-        </div>
-      </div>
-      <Comments review_id={review_id} />
-    </section>
+      <Voter review={review} setReview={setReview} />
+    </div>
   )
 }
 

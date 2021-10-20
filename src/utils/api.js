@@ -29,3 +29,10 @@ export const getReviewComments = async (review_id) => {
   const { data } = await gamesApi.get(`/reviews/${review_id}/comments`)
   return data.comments
 }
+
+export const addReviewVote = async (review_id) => {
+  const { data } = await gamesApi.patch(`/reviews/${review_id}`, {
+    inc_votes: 1,
+  })
+  return data.review
+}

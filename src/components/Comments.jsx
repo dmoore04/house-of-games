@@ -15,7 +15,7 @@ const Comments = ({ review_id }) => {
   return (
     <section>
       <h3>Comments</h3>
-      <ul class={styles.comment__list}>
+      <ul className={styles.comment__list}>
         {comments.map((comment) => (
           <CommentCard key={comment.comment_id} comment={comment} />
         ))}
