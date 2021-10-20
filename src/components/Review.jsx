@@ -51,13 +51,25 @@ const Heading = ({ review }) => {
 }
 
 const Votes = ({ review, setReview }) => {
+  const [voted, setVoted] = useState(false)
+
   return (
     <div className={styles.voting}>
       <p className={styles.votes}>
         <strong>Votes: </strong>
         {review.votes}
       </p>
-      <Voter review={review} setReview={setReview} />
+      <div className={styles.voters}>
+        {[1, -1].map((value) => (
+          <Voter
+            value={value}
+            review={review}
+            setReview={setReview}
+            voted={voted}
+            setVoted={setVoted}
+          />
+        ))}
+      </div>
     </div>
   )
 }

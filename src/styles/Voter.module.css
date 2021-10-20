@@ -5,4 +5,10 @@
   border-radius: 10%;
   background-color: #ffffff;
   box-shadow: 1px 1px 0px 1px #81b29a;
+  width: 50%;
+}
+
+.voter__voted {
+  background-color: #00a312;
+  opacity: 50%;
 }

@@ -1,20 +1,19 @@
 import { addReviewVote } from "../utils/api"
 import styles from "../styles/Voter.module.css"
 
-const Voter = ({ review, setReview }) => {
+const Voter = ({ review, setReview, value, voted, setVoted }) => {
   function addVote() {
     setReview((currReview) => {
-      const newVotes = currReview.votes + 1
+      const newVotes = currReview.votes + value
       return { ...currReview, votes: newVotes }
     })
-    addReviewVote(review.review_id).then((reviewFromAPI) => {
-      setReview(reviewFromAPI)
-    })
+    setVoted(!voted)
+    addReviewVote(review.review_id, value)
   }
 
   return (
-    <button className={styles.voter} onClick={addVote}>
-      👍
+    <button disabled={voted} className={styles.voter} onClick={addVote}>
+      {value > 0 ? "👍" : "👎"}
     </button>
   )
 }
