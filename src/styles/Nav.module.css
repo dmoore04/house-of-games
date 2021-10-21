@@ -5,6 +5,12 @@
   white-space: nowrap;
   overflow: scroll;
   padding: 0.75em;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
 }
 
 .categories {
