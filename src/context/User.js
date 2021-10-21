@@ -6,10 +6,9 @@ export const UserContext = createContext()
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
-    username: "tickle122",
-    avatar_url:
-      "https://www.spiritsurfers.net/monastery/wp-content/uploads/_41500270_mrtickle.jpg",
-    name: "Tom Tickle",
+    username: "grumpy19",
+    avatar_url: "https://www.tumbit.com/profile-image/4/original/mr-grumpy.jpg",
+    name: "Paul Grump",
   })
   return (
     <UserContext.Provider value={{ user, setUser }}>

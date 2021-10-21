@@ -1,17 +1,25 @@
 .header {
   background-color: #81b29a;
-  padding: 1em;
+  padding: 1em 1em 0.5em 1em;
+  font-family: "Source Code Pro", monospace;
+  line-height: 1.3em;
 }
 
 .title {
-  margin: 0;
-  font-size: 1.5em;
-  font-family: "Source Code Pro", monospace;
   font-weight: 600;
   color: #e2ff00;
+  margin: 0;
+  font-size: 1.5em;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .link {
   text-decoration: none;
+}
+
+.user {
+  color: white;
+  font-style: italic;
+  font-size: 0.75em;
 }
