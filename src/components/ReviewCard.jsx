@@ -1,14 +1,17 @@
 import styles from "../styles/ReviewCard.module.css"
+import { Grow } from "@mui/material"
 import { slugToName } from "../utils/string"
 import { Link } from "react-router-dom"
 
 const ReviewCard = ({ review }) => {
   return (
     <Link className={styles.link} to={`/reviews/${review.review_id}`}>
-      <div className={styles.card}>
-        <Heading review={review} />
-        <Metadata review={review} />
-      </div>
+      <Grow in={true} mountOnEnter unmountOnExit>
+        <div className={styles.card}>
+          <Heading review={review} />
+          <Metadata review={review} />
+        </div>
+      </Grow>
     </Link>
   )
 }
