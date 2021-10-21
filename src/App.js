@@ -5,27 +5,12 @@ import Reviews from "./components/Reviews"
 import Review from "./components/Review"
 import Page404 from "./components/Page404"
 import { Switch, Route } from "react-router"
-import { Slide } from "@mui/material"
-import { useState, useEffect } from "react"
-import { getCategories } from "./utils/api"
 
 function App() {
-  const [categories, setCategories] = useState([])
-
-  useEffect(() => {
-    getCategories().then((categoriesFromAPI) => {
-      setCategories(categoriesFromAPI)
-    })
-  }, [])
-
   return (
     <div className="App">
-      <Slide direction="down" in={true} mountOnEnter unmountOnExit>
-        <div>
-          <Header />
-          <Nav categories={categories} />
-        </div>
-      </Slide>
+      <Header />
+      <Nav />
       <Switch>
         <Route exact path="/">
           <Reviews />
