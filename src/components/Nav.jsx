@@ -6,7 +6,6 @@ import { Slide } from "@mui/material"
 
 const Nav = () => {
   const { categories, isLoading } = useCategories()
-  console.log(isLoading)
 
   return (
     !isLoading && (
