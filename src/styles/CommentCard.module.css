@@ -21,8 +21,14 @@
 
 .author {
   color: #81b29a;
+  margin-left: 0.75em;
 }
 
 .votes {
   color: #00a312;
+}
+
+.user {
+  display: flex;
+  align-items: center;
 }
