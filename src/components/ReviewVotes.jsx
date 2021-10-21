@@ -8,7 +8,7 @@ const ReviewVotes = ({ review, setReview }) => {
   return (
     <div className={styles.voting}>
       <p className={styles.votes}>
-        <strong>Votes: </strong>
+        <strong className={styles.title}>Votes: </strong>
         {review.votes}
       </p>
       <div className={styles.voters}>
