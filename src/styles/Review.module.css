@@ -4,7 +4,9 @@
 }
 
 .img {
+  max-width: 1280px;
   width: 100%;
+  margin: auto;
 }
 
 .title {
@@ -42,4 +44,17 @@
 .body {
   font-size: 0.9em;
   text-align: justify;
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+  .review {
+    width: -webkit-fill-available;
+    margin: 0 2em;
+  }
 }

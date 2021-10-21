@@ -9,6 +9,9 @@
   align-content: flex-end;
   flex-wrap: wrap;
   flex-direction: column;
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
 }
 
 .voting p {
