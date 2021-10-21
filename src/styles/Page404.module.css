@@ -2,7 +2,6 @@
   background-color: #f5f7ea;
   font-family: "Source Code Pro", monospace;
   margin-top: 23vh;
-  padding-bottom: 74%;
 }
 
 .construction {
@@ -21,4 +20,10 @@
 
 .status {
   color: #ff5965;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    margin-top: 30vh;
+  }
 }
