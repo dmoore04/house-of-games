@@ -42,3 +42,9 @@
   color: #ff5964;
   font-weight: bold;
 }
+
+@media only screen and (min-width: 1280px) {
+  .nav {
+    overflow: hidden;
+  }
+}
