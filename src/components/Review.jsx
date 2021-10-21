@@ -6,6 +6,7 @@ import useReview from "../hooks/useReview"
 import { HashLoader } from "react-spinners"
 import Error from "./Error"
 import { css } from "@emotion/react"
+import { Slide } from "@mui/material"
 
 const Review = () => {
   const { review_id, review, error, isLoading, setReview } = useReview()
@@ -23,15 +24,17 @@ const Review = () => {
         `}
       />
       {!isLoading && (
-        <>
-          <Heading review={review} />
-          <img className={styles.img} src={review.review_img_url} alt="" />
-          <p className={styles.metadata}>
-            Designed by <strong>{review.designer}</strong>
-          </p>
-          <p className={styles.body}>{review.review_body}</p>
-          <ReviewVotes review={review} setReview={setReview} />
-        </>
+        <Slide direction="up" in={true} mountOnEnter>
+          <div>
+            <Heading review={review} />
+            <img className={styles.img} src={review.review_img_url} alt="" />
+            <p className={styles.metadata}>
+              Designed by <strong>{review.designer}</strong>
+            </p>
+            <p className={styles.body}>{review.review_body}</p>
+            <ReviewVotes review={review} setReview={setReview} />
+          </div>
+        </Slide>
       )}
       <Comments review_id={review_id} reviewIsLoading={isLoading} />
     </section>
