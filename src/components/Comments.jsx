@@ -1,29 +1,15 @@
-import { useState, useEffect, useContext } from "react"
-import { getReviewComments, postComment } from "../utils/api"
+import { useState, useContext } from "react"
+import { postComment } from "../utils/api"
 import CommentCard from "./CommentCard"
 import styles from "../styles/Comments.module.css"
 import { UserContext } from "../context/User"
 import { BeatLoader } from "react-spinners"
+import useComments from "../hooks/useComments"
 
 const Comments = ({ review_id, reviewIsLoading }) => {
-  const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState("")
-  const [error, setError] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
   const { user } = useContext(UserContext)
-
-  useEffect(() => {
-    setIsLoading(true)
-    setError(null)
-    getReviewComments(review_id)
-      .then((commentsFromAPI) => {
-        setIsLoading(false)
-        setComments(commentsFromAPI)
-      })
-      .catch((err) => {
-        setError(err)
-      })
-  }, [review_id])
+  const { comments, error, isLoading, setComments } = useComments(review_id)
 
   function addComment(e) {
     e.preventDefault()
