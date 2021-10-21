@@ -1,5 +1,6 @@
 .label {
   color: #8d8d8d;
+  margin: 0 1em;
 }
 
 .select {
@@ -9,5 +10,5 @@
 
 .sorting {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
