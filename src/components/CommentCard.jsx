@@ -1,5 +1,4 @@
 import styles from "../styles/CommentCard.module.css"
-import { randomPersonEmoji } from "../utils/string"
 import useUser from "../hooks/useUser"
 import { Avatar } from "@mui/material"
 
