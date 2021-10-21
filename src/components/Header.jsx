@@ -6,7 +6,6 @@ import { UserContext } from "../context/User"
 
 const Header = () => {
   const { user } = useContext(UserContext)
-  console.log(user)
   return (
     <Slide direction="down" in={true} mountOnEnter unmountOnExit>
       <header className={styles.header}>
