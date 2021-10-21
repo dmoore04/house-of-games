@@ -3,6 +3,7 @@ import { slugToName } from "../utils/string"
 import styles from "../styles/Nav.module.css"
 import useCategories from "../hooks/useCategories"
 import { Slide } from "@mui/material"
+import { Divider } from "@mui/material"
 
 const Nav = () => {
   const { categories, isLoading } = useCategories()
@@ -13,14 +14,16 @@ const Nav = () => {
         <nav className={styles.nav}>
           <ul className={styles.categories}>
             {categories.map((category) => (
-              <NavLink
-                className={styles.link}
-                activeClassName={styles.selected}
-                key={category.slug}
-                to={`/categories/${category.slug}`}
-              >
-                {slugToName(category.slug)}
-              </NavLink>
+              <>
+                <NavLink
+                  className={styles.link}
+                  activeClassName={styles.selected}
+                  key={category.slug}
+                  to={`/categories/${category.slug}`}
+                >
+                  {slugToName(category.slug)}
+                </NavLink>
+              </>
             ))}
           </ul>
         </nav>

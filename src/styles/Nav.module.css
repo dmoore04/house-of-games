@@ -2,25 +2,38 @@
   background-color: #cbdfbd;
   font-family: "Source Code Pro", monospace;
   font-weight: 500;
-  white-space: nowrap;
   overflow: scroll;
-  padding: 0.75em;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
+  height: 3em;
 }
 
 .nav::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+}
+
+/* Track */
+.nav::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #8d8d8d;
+}
+
+/* Handle */
+.nav::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 2px;
 }
 
 .categories {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .link {
   text-decoration: none;
-  margin: 0 1em;
+  margin: 0.75em;
   color: #14213d;
   text-transform: capitalize;
 }
