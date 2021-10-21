@@ -37,3 +37,7 @@
   border: none;
   background-color: #81b29a;
 }
+
+.title {
+  text-transform: uppercase;
+}
