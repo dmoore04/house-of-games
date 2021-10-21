@@ -41,3 +41,7 @@
 .title {
   text-transform: uppercase;
 }
+
+.comments {
+  padding: 1em;
+}

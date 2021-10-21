@@ -22,7 +22,7 @@ const Comments = ({ review_id, reviewIsLoading }) => {
   }
 
   return (
-    <section>
+    <section className={styles.comments}>
       {error ? (
         <p className={styles.error}>
           Could not fetch comments, please refresh.
