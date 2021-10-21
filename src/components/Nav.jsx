@@ -13,16 +13,14 @@ const Nav = () => {
         <nav className={styles.nav}>
           <ul className={styles.categories}>
             {categories.map((category) => (
-              <>
-                <NavLink
-                  className={styles.link}
-                  activeClassName={styles.selected}
-                  key={category.slug}
-                  to={`/categories/${category.slug}`}
-                >
-                  {slugToName(category.slug)}
-                </NavLink>
-              </>
+              <NavLink
+                className={styles.link}
+                activeClassName={styles.selected}
+                key={category.slug}
+                to={`/categories/${category.slug}`}
+              >
+                {slugToName(category.slug)}
+              </NavLink>
             ))}
           </ul>
         </nav>
