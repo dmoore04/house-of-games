@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Voter } from "./Voter"
 import { addCommentVote } from "../utils/api"
+import styles from "../styles/CommentVotes.module.css"
 
 const CommentVotes = ({ comment, setComments }) => {
   const [voted, setVoted] = useState(false)
@@ -18,11 +19,25 @@ const CommentVotes = ({ comment, setComments }) => {
   }
 
   return (
-    <span>
+    <span className={styles.votes}>
       {[1, -1].map((value) => (
-        <Voter key={value} addVote={addVote} value={value} voted={voted} />
+        <Voter
+          type="comment"
+          key={value}
+          addVote={addVote}
+          value={value}
+          voted={voted}
+        />
       ))}
-      {comment.votes}
+      <span
+        className={`${styles.count} ${
+          styles[
+            comment.votes && (comment.votes >= 1 ? "positive" : "negative")
+          ]
+        }`}
+      >
+        {comment.votes}
+      </span>
     </span>
   )
 }

@@ -23,7 +23,13 @@ const ReviewVotes = ({ review, setReview }) => {
       </p>
       <div className={styles.voters}>
         {[1, -1].map((value) => (
-          <Voter key={value} value={value} voted={voted} addVote={addVote} />
+          <Voter
+            type="review"
+            key={value}
+            value={value}
+            voted={voted}
+            addVote={addVote}
+          />
         ))}
       </div>
     </div>

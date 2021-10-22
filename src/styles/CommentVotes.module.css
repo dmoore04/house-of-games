@@ -1,0 +1,17 @@
+.votes {
+  display: flex;
+  align-items: center;
+}
+
+.count {
+  margin-left: 0.5em;
+  font-weight: 600;
+}
+
+.positive {
+  color: #00a312;
+}
+
+.negative {
+  color: #ff5964;
+}
