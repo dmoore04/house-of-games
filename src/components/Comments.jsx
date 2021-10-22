@@ -56,7 +56,11 @@ const Comments = ({ review_id, reviewIsLoading }) => {
               </form>
               <ul className={styles.comment__list}>
                 {comments.map((comment) => (
-                  <CommentCard key={comment.comment_id} comment={comment} />
+                  <CommentCard
+                    key={comment.comment_id}
+                    comment={comment}
+                    setComments={setComments}
+                  />
                 ))}
               </ul>
             </>

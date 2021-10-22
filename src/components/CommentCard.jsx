@@ -1,11 +1,13 @@
 import styles from "../styles/CommentCard.module.css"
 import useUser from "../hooks/useUser"
+import CommentVotes from "./CommentVotes"
 import { Avatar } from "@mui/material"
 import { Slide } from "@mui/material"
 
-const CommentCard = ({ comment }) => {
+const CommentCard = ({ comment, setComments }) => {
   const { user } = useUser(comment.author)
   const published = new Date(comment.created_at)
+
   return (
     <Slide in={true} direction="right">
       <div className={styles.card}>
@@ -16,7 +18,7 @@ const CommentCard = ({ comment }) => {
             <strong className={styles.author}>{comment.author}</strong>
           </div>
           <span>📆 {published.toDateString()}</span>
-          <span className={styles.votes}>👍 {comment.votes}</span>
+          <CommentVotes comment={comment} setComments={setComments} />
         </div>
       </div>
     </Slide>

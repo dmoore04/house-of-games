@@ -56,3 +56,11 @@ export const getUser = async (username) => {
   const { data } = await gamesApi.get(`users/${username}`)
   return data.user
 }
+
+export const addCommentVote = async (comment_id, value) => {
+  const { data } = await gamesApi.patch(`/comments/${comment_id}`, {
+    inc_votes: value,
+  })
+
+  return data.comment
+}

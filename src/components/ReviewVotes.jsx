@@ -1,5 +1,5 @@
 import styles from "../styles/ReviewVotes.module.css"
-import Voter from "./Voter"
+import { Voter } from "./Voter"
 import { useState } from "react"
 
 const ReviewVotes = ({ review, setReview }) => {
