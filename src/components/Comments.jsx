@@ -10,13 +10,16 @@ const Comments = ({ review_id, reviewIsLoading }) => {
   const [newComment, setNewComment] = useState("")
   const { user } = useContext(UserContext)
   const { comments, error, isLoading, setComments } = useComments(review_id)
+  const [newPostLoading, setNewPostLoading] = useState(false)
 
   function addComment(e) {
     e.preventDefault()
+    setNewPostLoading(true)
     const form = e.target
     const body = form.comment_body.value
     postComment(review_id, body, user.username).then((commentFromAPI) => {
       setComments((currComments) => [commentFromAPI, ...currComments])
+      setNewPostLoading(false)
       setNewComment("")
     })
   }
@@ -54,6 +57,7 @@ const Comments = ({ review_id, reviewIsLoading }) => {
                 />
                 <button className={styles.post__button}>Post</button>
               </form>
+              <BeatLoader loading={newPostLoading} color={"#81b29a"} />
               <ul className={styles.comment__list}>
                 {comments.map((comment) => (
                   <CommentCard
