@@ -1,3 +1,21 @@
+@keyframes wiggle {
+  0% {
+    transform: rotate(45deg);
+  }
+  30% {
+    transform: rotate(58deg);
+  }
+  60% {
+    transform: rotate(33deg);
+  }
+  90% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(47deg);
+  }
+}
+
 .button {
   background: none;
   border: none;
@@ -7,6 +25,11 @@
   top: 12px;
   transform: rotate(45deg);
   cursor: pointer;
+  animation: wiggle 2.5s infinite;
+}
+
+.button:hover {
+  animation: wiggle 0.5s infinite;
 }
 
 @media only screen and (min-width: 768px) {
