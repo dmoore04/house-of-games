@@ -31,10 +31,12 @@ const CommentCard = ({ comment, setComments }) => {
           </div>
           <span>📆 {published.toDateString()}</span>
           <CommentVotes comment={comment} setComments={setComments} />
-          {comment.author === loggedInAs.username && (
-            <button onClick={removeComment}>❌</button>
-          )}
         </div>
+        {comment.author === loggedInAs.username && (
+          <button class={styles.delete} onClick={removeComment}>
+            ❌
+          </button>
+        )}
       </div>
     </Slide>
   )

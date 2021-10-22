@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   background-color: #ffffff;
   padding: 1em;
   margin-bottom: 1em;
@@ -31,4 +32,12 @@
 .user {
   display: flex;
   align-items: center;
+}
+
+.delete {
+  background: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1em;
 }
