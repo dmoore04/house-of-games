@@ -4,24 +4,28 @@ import CommentVotes from "./CommentVotes"
 import { Avatar } from "@mui/material"
 import { Slide } from "@mui/material"
 import { deleteComment } from "../utils/api"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { UserContext } from "../context/User"
 
 const CommentCard = ({ comment, setComments }) => {
   const { user: loggedInAs } = useContext(UserContext)
+  const [removed, setRemoved] = useState(false)
   const { user } = useUser(comment.author)
   const published = new Date(comment.created_at)
 
   function removeComment() {
-    const idToDelete = comment.comment_id
-    setComments((currComments) =>
-      currComments.filter((comment) => comment.comment_id !== idToDelete)
-    )
-    deleteComment(idToDelete)
+    setRemoved(true)
+    setTimeout(() => {
+      const idToDelete = comment.comment_id
+      setComments((currComments) =>
+        currComments.filter((comment) => comment.comment_id !== idToDelete)
+      )
+      deleteComment(idToDelete)
+    }, 200)
   }
 
   return (
-    <Slide in={true} direction="right">
+    <Slide in={!removed} direction="right">
       <div className={styles.card}>
         <p className={styles.body}>{comment.body}</p>
         <div className={styles.metadata}>
