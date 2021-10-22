@@ -4,14 +4,14 @@ import { useState } from "react"
 import { addReviewVote } from "../utils/api"
 
 const ReviewVotes = ({ review, setReview }) => {
-  const [voted, setVoted] = useState(false)
+  const [vote, setVote] = useState(null)
 
   function addVote(value) {
     setReview((currReview) => {
       const newVotes = currReview.votes + value
       return { ...currReview, votes: newVotes }
     })
-    setVoted(true)
+    setVote(value)
     addReviewVote(review.review_id, value)
   }
 
@@ -27,7 +27,7 @@ const ReviewVotes = ({ review, setReview }) => {
             type="review"
             key={value}
             value={value}
-            voted={voted}
+            vote={vote}
             addVote={addVote}
           />
         ))}

@@ -4,7 +4,7 @@ import { addCommentVote } from "../utils/api"
 import styles from "../styles/CommentVotes.module.css"
 
 const CommentVotes = ({ comment, setComments }) => {
-  const [voted, setVoted] = useState(false)
+  const [vote, setVote] = useState(null)
   // hacky solution because no GET comments/:comment_id endpoint
   function addVote(value) {
     setComments((currComments) =>
@@ -15,7 +15,7 @@ const CommentVotes = ({ comment, setComments }) => {
       )
     )
     addCommentVote(comment.comment_id, value)
-    setVoted(true)
+    setVote(value)
   }
 
   return (
@@ -26,7 +26,7 @@ const CommentVotes = ({ comment, setComments }) => {
           key={value}
           addVote={addVote}
           value={value}
-          voted={voted}
+          vote={vote}
         />
       ))}
       <span

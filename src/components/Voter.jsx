@@ -1,17 +1,14 @@
 import styles from "../styles/Voter.module.css"
-import { useState } from "react"
 
-export const Voter = ({ value, voted, addVote, type }) => {
-  const [wasClicked, setWasClicked] = useState(false)
+export const Voter = ({ value, addVote, type, vote }) => {
   const className = `${styles[type]} ${
     styles[value > 0 ? "upvote" : "downvote"]
-  } ${styles[voted && !wasClicked ? "unselected" : "selected"]}`
+  }`
   return (
     <button
-      disabled={voted}
+      disabled={vote === value}
       className={className}
       onClick={() => {
-        setWasClicked(true)
         addVote(value)
       }}
     >
