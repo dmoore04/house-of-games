@@ -64,3 +64,8 @@ export const addCommentVote = async (comment_id, value) => {
 
   return data.comment
 }
+
+export const deleteComment = async (comment_id) => {
+  const { data } = await gamesApi.delete(`/comments/${comment_id}`)
+  return data.comment
+}

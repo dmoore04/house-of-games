@@ -19,7 +19,7 @@ const ReviewVotes = ({ review, setReview }) => {
     <div className={styles.voting}>
       <p className={styles.votes}>
         <strong className={styles.title}>Votes: </strong>
-        <span className={review.votes < 0 && styles.negative}>
+        <span className={review.votes < 0 ? styles.negative : null}>
           {review.votes}
         </span>
       </p>

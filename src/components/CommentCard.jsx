@@ -3,10 +3,22 @@ import useUser from "../hooks/useUser"
 import CommentVotes from "./CommentVotes"
 import { Avatar } from "@mui/material"
 import { Slide } from "@mui/material"
+import { deleteComment } from "../utils/api"
+import { useContext } from "react"
+import { UserContext } from "../context/User"
 
 const CommentCard = ({ comment, setComments }) => {
+  const { user: loggedInAs } = useContext(UserContext)
   const { user } = useUser(comment.author)
   const published = new Date(comment.created_at)
+
+  function removeComment() {
+    const idToDelete = comment.comment_id
+    setComments((currComments) =>
+      currComments.filter((comment) => comment.comment_id !== idToDelete)
+    )
+    deleteComment(idToDelete)
+  }
 
   return (
     <Slide in={true} direction="right">
@@ -19,6 +31,9 @@ const CommentCard = ({ comment, setComments }) => {
           </div>
           <span>📆 {published.toDateString()}</span>
           <CommentVotes comment={comment} setComments={setComments} />
+          {comment.author === loggedInAs.username && (
+            <button onClick={removeComment}>❌</button>
+          )}
         </div>
       </div>
     </Slide>
