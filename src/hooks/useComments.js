@@ -19,7 +19,7 @@ const useComments = (review_id) => {
       })
   }, [review_id])
 
-  return { comments, error, isLoading }
+  return { comments, error, isLoading, setComments }
 }
 
 export default useComments
