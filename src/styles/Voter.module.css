@@ -10,6 +10,13 @@
 }
 
 .voter__voted {
+  opacity: 75%;
+}
+
+.upvote {
   background-color: #00a312;
-  opacity: 50%;
+}
+
+.downvote {
+  background-color: #ff5964;
 }
