@@ -21,3 +21,7 @@
 .title {
   text-transform: uppercase;
 }
+
+.negative {
+  color: #ff5964;
+}

@@ -19,7 +19,9 @@ const ReviewVotes = ({ review, setReview }) => {
     <div className={styles.voting}>
       <p className={styles.votes}>
         <strong className={styles.title}>Votes: </strong>
-        {review.votes}
+        <span className={review.votes < 0 && styles.negative}>
+          {review.votes}
+        </span>
       </p>
       <div className={styles.voters}>
         {[1, -1].map((value) => (

@@ -37,7 +37,19 @@ const Metadata = ({ review }) => {
       </p>
       <div className={styles.metadata}>
         <span className={styles.date}>{published.toDateString()} ⏰</span>
-        <span className={styles.votes}>{review.votes} 👍</span>
+        <span
+          className={
+            styles[
+              review.votes
+                ? review.votes < 0
+                  ? "votes__negative"
+                  : "votes__positive"
+                : "votes"
+            ]
+          }
+        >
+          {review.votes} 👍
+        </span>
         <span className={styles.comments}>{review.comment_count} 💬</span>
       </div>
     </>

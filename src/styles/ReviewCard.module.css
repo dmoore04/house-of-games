@@ -28,7 +28,15 @@
 }
 
 .votes {
+  color: #8d8d8d;
+}
+
+.votes__positive {
   color: #00a312;
+}
+
+.votes__negative {
+  color: #ff5964;
 }
 
 .metadata {
