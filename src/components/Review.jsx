@@ -27,7 +27,9 @@ const Review = () => {
         <Slide direction="up" in={true} mountOnEnter>
           <div>
             <Heading review={review} />
-            <img className={styles.img} src={review.review_img_url} alt="" />
+            <div className={styles.img__container}>
+              <img className={styles.img} src={review.review_img_url} alt="" />
+            </div>
             <p className={styles.metadata}>
               Designed by <strong>{review.designer}</strong>
             </p>
