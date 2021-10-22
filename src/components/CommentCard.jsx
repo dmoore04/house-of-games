@@ -37,7 +37,7 @@ const CommentCard = ({ comment, setComments }) => {
           <CommentVotes comment={comment} setComments={setComments} />
         </div>
         {comment.author === loggedInAs.username && (
-          <button class={styles.delete} onClick={removeComment}>
+          <button className={styles.delete} onClick={removeComment}>
             ❌
           </button>
         )}

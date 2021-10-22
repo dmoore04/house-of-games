@@ -69,8 +69,4 @@
   .img__container {
     max-height: 66vh;
   }
-
-  .img {
-    transform: translateY(-50%);
-  }
 }
