@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const gamesApi = axios.create({
-  baseURL: "http://board-games-api.herokuapp.com/api",
+  baseURL: "https://board-games-api.herokuapp.com/api",
 })
 
 export const getCategories = async () => {
