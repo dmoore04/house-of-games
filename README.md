@@ -31,7 +31,7 @@ _Combined with its back-end, this project implements the [PERN stack](https://ww
 
 **Node.js [14.8.1](https://nodejs.org/en/download/) >=**
 
-### User dependencies
+### Dependencies
 
 ```yaml
 "dependencies":
@@ -39,15 +39,11 @@ _Combined with its back-end, this project implements the [PERN stack](https://ww
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@mui/material": "^5.0.4",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.23.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "react-spinners": "^0.11.0",
-    "web-vitals": "^1.1.2",
   }
 ```
