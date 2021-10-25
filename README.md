@@ -78,3 +78,18 @@ found 0 vulnerabilities
 ```
 
 </br>
+
+### Running the app
+
+After installing the dependencies you now start the app locally. After doing so navigate to http://localhost:3000/ to see the app live.</br>
+_You can kill the site at any point using `CTRL+C`_
+
+```shell
+~$ npm run start
+
+> be-nc-games@1.0.0 start
+> node listen.js
+
+Listening on 9090...
+_
+```
