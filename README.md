@@ -81,15 +81,22 @@ found 0 vulnerabilities
 
 ### Running the app
 
-After installing the dependencies you now start the app locally. After doing so navigate to http://localhost:3000/ to see the app live.</br>
+After installing the dependencies you now start the app locally. After doing so navigate to [localhost:3000](http://localhost:3000) to see the live app.</br>
 _You can kill the site at any point using `CTRL+C`_
 
 ```shell
-~$ npm run start
+~$ npm start
 
-> be-nc-games@1.0.0 start
-> node listen.js
+Compiled successfully!
 
-Listening on 9090...
+You can now view house-of-games in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.0.179:3000
+
 _
 ```
+
+</br>
+
+## **_Thank you!_**
