@@ -33,6 +33,11 @@ _Needed to run the project locally on your machine._
 
 **Node.js [14.8.1](https://nodejs.org/en/download/) >=**
 
+```shell
+~$ node --version
+v14.8.1
+```
+
 ### Dependencies
 
 ```yaml
