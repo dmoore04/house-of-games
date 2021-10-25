@@ -5,7 +5,7 @@ import styles from "../styles/CommentVotes.module.css"
 
 const CommentVotes = ({ comment, setComments }) => {
   const [vote, setVote] = useState(null)
-  // hacky solution because no GET comments/:comment_id endpoint
+
   function addVote(value) {
     setComments((currComments) =>
       currComments.map((currComment) =>

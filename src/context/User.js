@@ -2,8 +2,6 @@ import { createContext, useState } from "react"
 
 export const UserContext = createContext()
 
-// default user context
-
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
     username: "grumpy19",
