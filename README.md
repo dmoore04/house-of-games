@@ -27,6 +27,8 @@ _Combined with its back-end, this project implements the [PERN stack](https://ww
 
 ## Requirements
 
+_Needed to run the project locally on your machine._
+
 ### Software
 
 **Node.js [14.8.1](https://nodejs.org/en/download/) >=**
@@ -47,3 +49,32 @@ _Combined with its back-end, this project implements the [PERN stack](https://ww
     "react-spinners": "^0.11.0",
   }
 ```
+
+---
+
+## Setting it up
+
+If you are planning to add to this app, first fork a copy of this repo to your own GitHub account so you can push changes. Execute any commands pointing to the repo with your new URL.
+
+### Cloning and dependencies
+
+1. Clone the repo to your local machine </br>
+   _This will create and navigate to the folder **`house-of-games`**_
+
+```shell
+~$ git clone https://github.com/dmoore04/house-of-games.git && cd house-of-games
+```
+
+</br>
+
+2. Install the npm dependencies </br>
+
+```shell
+~$ npm install
+
+added 1950 packages, and audited 1951 packages in 16s
+
+found 0 vulnerabilities
+```
+
+</br>
