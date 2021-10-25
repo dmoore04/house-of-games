@@ -59,7 +59,7 @@ v14.8.1
 
 ## Setting it up
 
-If you are planning to add to this app, first fork a copy of this repo to your own GitHub account so you can push changes. Execute any commands pointing to the repo with your new URL.
+_If you are planning to add to this app, first fork a copy of this repo to your own GitHub account so you can push changes. Execute any commands pointing to the repo with your new URL._
 
 ### Cloning and dependencies
 
@@ -68,6 +68,7 @@ If you are planning to add to this app, first fork a copy of this repo to your o
 
 ```shell
 ~$ git clone https://github.com/dmoore04/house-of-games.git && cd house-of-games
+Cloning into 'house-of-games'...
 ```
 
 </br>
