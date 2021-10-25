@@ -2,11 +2,11 @@
 
 ## Overview
 
-House of Games is an interactive board game review web app. It dynamically pulls and renders data from a dedicated [PostgreSQL](https://www.postgresql.org/) database using requests to its [Back-End API](https://github.com/dmoore04/house-of-games-API). Users are able to browse, talk about and vote on reviews posted by others.
+House of Games is an interactive, board game review, web app. It dynamically pulls and renders data from a dedicated [PostgreSQL](https://www.postgresql.org/) database using requests to its [back-end API](https://github.com/dmoore04/house-of-games-API). Users are able to browse, talk about and vote on reviews posted by others.
 
 </br>
 
-The app is built with [React](https://reactjs.org/) and implements [React Router](https://reactrouter.com/web/guides/quick-start) to deliver a responsive single-page application (SPA). Our data fetching was handled by the [Axios](https://axios-http.com/) HTTP library. The majority of the sites styling was implemented using [CSS Modules](https://github.com/css-modules/css-modules). [Google's Material UI](https://mui.com/) (MUI) was used in places to animate component transitions.
+The app is built with [React](https://reactjs.org/) and implements [React Router](https://reactrouter.com/web/guides/quick-start) to deliver a responsive single-page application. Our data fetching was handled by the [Axios](https://axios-http.com/) HTTP library. The majority of the sites styling was implemented via [CSS Modules](https://github.com/css-modules/css-modules). [Google's Material UI](https://mui.com/) was used in places to animate component transitions.
 
 </br>
 
@@ -20,8 +20,8 @@ _Combined with its back-end, this project implements the [PERN stack](https://ww
 | Technology | Description |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **Node.js** | Our JavaScript runtime enviroment. Enables package integrations with [npm](https://www.npmjs.com/). |
-| **React** | Our framework for building front-end user interfaces. Simplifies the development of interactive web pages. |
-| **Axios** | HTTP client which connects our app to the outside world. Allows us to dynaimcally fetch data for responsive rendering. |
+| **React** | Our framework for building front-end user interfaces. Provides a more programmatic way to develop web pages. |
+| **Axios** | HTTP client which connects our app to the web. Allows us to dynaimcally fetch data for responsive rendering. |
 
 ---
 
